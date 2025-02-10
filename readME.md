@@ -123,12 +123,12 @@ Open a new terminal window.
 
 Navigate to the ETL-Store-Scala folder:
 
-  ```bash
+    ```bash
     cd /ETL-Store-Scala
 
 Build the project and generate the JAR file using Maven:
 
-```bash
+  ```bash
   mvn clean package
 
 Once the JAR file is generated (typically under the target folder), copy it to the appropriate folder inside the Docker environment (usually a jar directory within Airflow-Docker). Adjust the path as needed.
