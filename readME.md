@@ -103,3 +103,88 @@ The project was developed with the following goals in mind:
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
+2. **Build and Start the Docker Environment::**
+
+* Navigate to the Airflow-Docker folder:
+
+  ```bash
+  cd Airflow-Docker
+
+* Start the Docker containers:
+
+  ```bash
+  docker-compose up --build
+
+This command will build the Docker images (for Airflow, Spark, and MinIO) and start all services.
+
+3. **Compile the Scala ETL Code:**
+
+Open a new terminal window.
+
+Navigate to the ETL-Store-Scala folder:
+
+  ```bash
+    cd /ETL-Store-Scala
+
+Build the project and generate the JAR file using Maven:
+
+```bash
+  mvn clean package
+
+Once the JAR file is generated (typically under the target folder), copy it to the appropriate folder inside the Docker environment (usually a jar directory within Airflow-Docker). Adjust the path as needed.
+
+3. **Triggering the Pipeline:**
+
+* With all services running, access the Airflow UI at http://localhost:8080.
+* Monitor and manage the DAGs. You can either trigger them manually or let the scheduled daily run execute automatically.
+* Logs and progress can be reviewed directly from the Airflow web interface.
+
+
+### Accessing the Services
+
+*Airflow:*
+UI is accessible at http://localhost:8081. Refer to your Docker Compose configuration for default credentials if required.
+
+*MinIO:*
+Accessible via http://localhost:9000. Use the credentials provided in the Docker Compose file to log in.
+
+*Spark:*
+UI is accessible at http://localhost:8080.Monitor Spark logs and job status via the Docker container logs.
+
+
+### Troubleshooting
+
+**Docker Issues:**
+
+* Verify that Docker has enough memory and CPU resources allocated.
+* Use docker-compose logs to check for any errors in the services.
+
+**Airflow Problems:**
+
+* Check the logs for the Airflow scheduler and webserver containers.
+* Ensure that the DAGs are correctly placed in the expected directory.
+
+**Scala ETL Failures:**
+
+* Confirm that the Scala JAR file is correctly built and placed.
+* Inspect the Spark container logs for any execution errors related to the ETL job.
+
+### Contributing
+
+We welcome contributions! If you'd like to contribute:
+1. Fork the repository
+2. Create a new branch
+3. Submit a pull request
+
+For bugs or feature requests, please open an issue.
+
+## License
+
+This project is distributed under the MIT License. See `LICENSE` file for more information.
+
+## Acknowledgements
+
+- [Apache Airflow](https://airflow.apache.org/)
+- [Apache Spark](https://spark.apache.org/)
+- [MinIO](https://min.io/)
+- [Fake Store API](https://fakestoreapi.com/)
