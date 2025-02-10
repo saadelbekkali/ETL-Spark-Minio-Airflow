@@ -103,18 +103,20 @@ The project was developed with the following goals in mind:
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
+   ```
 2. **Build and Start the Docker Environment::**
 
 * Navigate to the Airflow-Docker folder:
 
   ```bash
   cd Airflow-Docker
-
+  ```
+  
 * Start the Docker containers:
 
   ```bash
   docker-compose up --build
-
+  ```
 This command will build the Docker images (for Airflow, Spark, and MinIO) and start all services.
 
 3. **Compile the Scala ETL Code:**
@@ -125,12 +127,12 @@ Navigate to the ETL-Store-Scala folder:
 
     ```bash
     cd /ETL-Store-Scala
-
+    ```
 Build the project and generate the JAR file using Maven:
 
   ```bash
   mvn clean package
-
+```
 Once the JAR file is generated (typically under the target folder), copy it to the appropriate folder inside the Docker environment (usually a jar directory within Airflow-Docker). Adjust the path as needed.
 
 3. **Triggering the Pipeline:**
