@@ -121,15 +121,15 @@ This command will build the Docker images (for Airflow, Spark, and MinIO) and st
 
 3. **Compile the Scala ETL Code:**
 
-Open a new terminal window.
+- Open a new terminal window.
 
-Navigate to the ETL-Store-Scala folder:
+- Navigate to the ETL-Store-Scala folder:
 
   ```bash
 cd /ETL-Store-Scala
   ```
 
-Build the project and generate the JAR file using Maven:
+- Build the project and generate the JAR file using Maven:
 
   ```bash
   mvn clean package
