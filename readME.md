@@ -108,7 +108,7 @@ The project was developed with the following goals in mind:
 
 * Navigate to the Airflow-Docker folder:
 
-  ```bash
+```bash
   cd Airflow-Docker
   ```
   
@@ -144,13 +144,13 @@ Once the JAR file is generated (typically under the target folder), copy it to t
 
 ### Accessing the Services
 
-*Airflow:*
+- *Airflow:*
 UI is accessible at http://localhost:8081. Refer to your Docker Compose configuration for default credentials if required.
 
-*MinIO:*
+- *MinIO:*
 Accessible via http://localhost:9000. Use the credentials provided in the Docker Compose file to log in.
 
-*Spark:*
+- *Spark:*
 UI is accessible at http://localhost:8080.Monitor Spark logs and job status via the Docker container logs.
 
 
