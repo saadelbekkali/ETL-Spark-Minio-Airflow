@@ -125,9 +125,10 @@ Open a new terminal window.
 
 Navigate to the ETL-Store-Scala folder:
 
-    ```bash
-    cd /ETL-Store-Scala
-    ```
+  ```bash
+cd /ETL-Store-Scala
+  ```
+
 Build the project and generate the JAR file using Maven:
 
   ```bash
@@ -158,18 +159,18 @@ UI is accessible at http://localhost:8080.Monitor Spark logs and job status via 
 
 **Docker Issues:**
 
-* Verify that Docker has enough memory and CPU resources allocated.
-* Use docker-compose logs to check for any errors in the services.
+- Verify that Docker has enough memory and CPU resources allocated.
+- Use docker-compose logs to check for any errors in the services.
 
 **Airflow Problems:**
 
-* Check the logs for the Airflow scheduler and webserver containers.
-* Ensure that the DAGs are correctly placed in the expected directory.
+- Check the logs for the Airflow scheduler and webserver containers.
+- Ensure that the DAGs are correctly placed in the expected directory.
 
 **Scala ETL Failures:**
 
-* Confirm that the Scala JAR file is correctly built and placed.
-* Inspect the Spark container logs for any execution errors related to the ETL job.
+- Confirm that the Scala JAR file is correctly built and placed.
+- Inspect the Spark container logs for any execution errors related to the ETL job.
 
 ### Contributing
 
