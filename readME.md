@@ -144,11 +144,11 @@ While configuring `settings.json` is usually sufficient, you can also set up the
   3. Add `$JAVA_HOME/bin` to the `PATH` variable:
      - This ensures `java` and `javac` commands use the correct version.
 
-     
     ```bash
        export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/azul-11/Contents/Home
        export PATH=$JAVA_HOME/bin:$PATH
     ```
+
   4. Restart VS Code and your terminal.
 
 4. **Verify Configuration:**
