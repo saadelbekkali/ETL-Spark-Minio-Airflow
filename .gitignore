@@ -1,28 +1,3 @@
-# Ignorar todos los directorios target en todo el repositorio
-**/target/
-
-# No ignorar el archivo maven-wrapper.jar
-!.mvn/wrapper/maven-wrapper.jar
-
-# No ignorar los directorios target dentro de src/main y src/test
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### IntelliJ IDEA ###
-# Ignorar los archivos de configuración de IntelliJ IDEA dentro de ETL-Scala-Store
-ETL-Scala-Store/.idea/modules.xml
-ETL-Scala-Store/.idea/jarRepositories.xml
-ETL-Scala-Store/.idea/compiler.xml
-ETL-Scala-Store/.idea/libraries/
-*.iws
-*.iml
-*.ipr
-
-# Ignorar la carpeta out en cualquier lugar
-out/
-# No ignorar la carpeta out dentro de src/main y src/test
-!**/src/main/**/out/
-!**/src/test/**/out/
 
 ### VS Code ###
 # Ignorar la configuración de VS Code
@@ -32,13 +7,6 @@ out/
 # Ignorar archivos específicos de Mac OS
 .DS_Store
 
-### Bloop ###
-# Ignorar el directorio .bloop dentro de ETL-Scala-Store
-ETL-Scala-Store/.bloop
-
-### Idea ###
-# Ignorar todo el directorio .idea dentro de ETL-Scala-Store
-ETL-Scala-Store/.idea/
 
 ### Metals ###
 # Ignorar la carpeta de configuración de Metals
