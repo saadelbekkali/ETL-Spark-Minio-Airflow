@@ -260,3 +260,124 @@
 [2025-02-11T15:58:32.307+0000] {spark_submit.py:491} INFO - 25/02/11 15:58:32 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at WriterJsonBase.scala:33) (first 15 tasks are for partitions Vector(0))
 [2025-02-11T15:58:32.312+0000] {spark_submit.py:491} INFO - 25/02/11 15:58:32 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
 [2025-02-11T15:58:59.463+0000] {spark_submit.py:491} INFO - 25/02/11 15:58:59 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 18216 bytes)
+[2025-02-11T15:59:01.087+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:01 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.19.0.5:43703 (size: 7.0 KiB, free: 434.4 MiB)
+[2025-02-11T15:59:02.206+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2832 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:59:02.213+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2025-02-11T15:59:02.237+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO DAGScheduler: ResultStage 0 (json at WriterJsonBase.scala:33) finished in 36.383 s
+[2025-02-11T15:59:02.252+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:59:02.253+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-02-11T15:59:02.268+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO DAGScheduler: Job 0 finished: json at WriterJsonBase.scala:33, took 37.765571 s
+[2025-02-11T15:59:02.827+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 1921aa867cda:34259 in memory (size: 7.0 KiB, free: 434.4 MiB)
+[2025-02-11T15:59:02.850+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:02 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.19.0.5:43703 in memory (size: 7.0 KiB, free: 434.4 MiB)
+[2025-02-11T15:59:03.579+0000] {spark_submit.py:491} INFO - Writing to full path: s3a://bronze/Products/Products_20250211
+[2025-02-11T15:59:05.226+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:05 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2025-02-11T15:59:05.313+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:05 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+[2025-02-11T15:59:05.314+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:05 INFO MetricsSystemImpl: s3a-file-system metrics system started
+[2025-02-11T15:59:09.531+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-02-11T15:59:09.531+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-02-11T15:59:09.533+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2025-02-11T15:59:09.778+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO CodeGenerator: Code generated in 87.959091 ms
+[2025-02-11T15:59:09.802+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO SparkContext: Starting job: save at WriterJsonBase.scala:43
+[2025-02-11T15:59:09.806+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO DAGScheduler: Got job 1 (save at WriterJsonBase.scala:43) with 1 output partitions
+[2025-02-11T15:59:09.807+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO DAGScheduler: Final stage: ResultStage 1 (save at WriterJsonBase.scala:43)
+[2025-02-11T15:59:09.807+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:59:09.808+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:59:09.811+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[11] at save at WriterJsonBase.scala:43), which has no missing parents
+[2025-02-11T15:59:09.952+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:09 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 244.3 KiB, free 434.2 MiB)
+[2025-02-11T15:59:10.008+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 88.3 KiB, free 434.1 MiB)
+[2025-02-11T15:59:10.010+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 1921aa867cda:34259 (size: 88.3 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:10.013+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:59:10.015+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[11] at save at WriterJsonBase.scala:43) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:59:10.016+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2025-02-11T15:59:10.021+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 18216 bytes)
+[2025-02-11T15:59:10.085+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:10 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.19.0.5:43703 (size: 88.3 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:19.719+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 9697 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:59:19.723+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2025-02-11T15:59:19.727+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO DAGScheduler: ResultStage 1 (save at WriterJsonBase.scala:43) finished in 9.910 s
+[2025-02-11T15:59:19.735+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:59:19.740+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2025-02-11T15:59:19.741+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO DAGScheduler: Job 1 finished: save at WriterJsonBase.scala:43, took 9.914589 s
+[2025-02-11T15:59:19.748+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:19 INFO FileFormatWriter: Start to commit write Job 4dca9728-f6dd-4360-964f-170f1c16ae65.
+[2025-02-11T15:59:20.305+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO FileFormatWriter: Write Job 4dca9728-f6dd-4360-964f-170f1c16ae65 committed. Elapsed time: 552 ms.
+[2025-02-11T15:59:20.313+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO FileFormatWriter: Finished processing stats for write job 4dca9728-f6dd-4360-964f-170f1c16ae65.
+[2025-02-11T15:59:20.319+0000] {spark_submit.py:491} INFO - Data written successfully to MinIO: s3a://bronze/Products/Products_20250211
+[2025-02-11T15:59:20.333+0000] {spark_submit.py:491} INFO - new method:
+[2025-02-11T15:59:20.334+0000] {spark_submit.py:491} INFO - Starting writeToMinIO for path: Users/Users_20250211
+[2025-02-11T15:59:20.335+0000] {spark_submit.py:491} INFO - Using bucket: bronze
+[2025-02-11T15:59:20.339+0000] {spark_submit.py:491} INFO - JSON string length: 2990
+[2025-02-11T15:59:20.340+0000] {spark_submit.py:491} INFO - Converting to Dataset...
+[2025-02-11T15:59:20.498+0000] {spark_submit.py:491} INFO - Reading as DataFrame...
+[2025-02-11T15:59:20.534+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO SparkContext: Starting job: json at WriterJsonBase.scala:33
+[2025-02-11T15:59:20.536+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Got job 2 (json at WriterJsonBase.scala:33) with 1 output partitions
+[2025-02-11T15:59:20.537+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Final stage: ResultStage 2 (json at WriterJsonBase.scala:33)
+[2025-02-11T15:59:20.538+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:59:20.539+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:59:20.541+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[15] at json at WriterJsonBase.scala:33), which has no missing parents
+[2025-02-11T15:59:20.551+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 16.9 KiB, free 434.1 MiB)
+[2025-02-11T15:59:20.585+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 7.0 KiB, free 434.1 MiB)
+[2025-02-11T15:59:20.588+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 1921aa867cda:34259 (size: 7.0 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:20.589+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:59:20.591+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[15] at json at WriterJsonBase.scala:33) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:59:20.591+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2025-02-11T15:59:20.594+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 10544 bytes)
+[2025-02-11T15:59:20.652+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.19.0.5:43703 (size: 7.0 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:20.695+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 102 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:59:20.696+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2025-02-11T15:59:20.697+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: ResultStage 2 (json at WriterJsonBase.scala:33) finished in 0.154 s
+[2025-02-11T15:59:20.698+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:59:20.699+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2025-02-11T15:59:20.699+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO DAGScheduler: Job 2 finished: json at WriterJsonBase.scala:33, took 0.165483 s
+[2025-02-11T15:59:20.782+0000] {spark_submit.py:491} INFO - Writing to full path: s3a://bronze/Users/Users_20250211
+[2025-02-11T15:59:20.960+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-02-11T15:59:20.961+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-02-11T15:59:20.961+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:20 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2025-02-11T15:59:21.024+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 1921aa867cda:34259 in memory (size: 7.0 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:21.034+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.19.0.5:43703 in memory (size: 7.0 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:21.058+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 1921aa867cda:34259 in memory (size: 88.3 KiB, free: 434.4 MiB)
+[2025-02-11T15:59:21.068+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.19.0.5:43703 in memory (size: 88.3 KiB, free: 434.4 MiB)
+[2025-02-11T15:59:21.185+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO CodeGenerator: Code generated in 91.478869 ms
+[2025-02-11T15:59:21.197+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO SparkContext: Starting job: save at WriterJsonBase.scala:43
+[2025-02-11T15:59:21.199+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Got job 3 (save at WriterJsonBase.scala:43) with 1 output partitions
+[2025-02-11T15:59:21.201+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Final stage: ResultStage 3 (save at WriterJsonBase.scala:43)
+[2025-02-11T15:59:21.204+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:59:21.204+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:59:21.205+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[23] at save at WriterJsonBase.scala:43), which has no missing parents
+[2025-02-11T15:59:21.268+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 247.2 KiB, free 434.2 MiB)
+[2025-02-11T15:59:21.273+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 89.6 KiB, free 434.1 MiB)
+[2025-02-11T15:59:21.275+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 1921aa867cda:34259 (size: 89.6 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:21.279+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:59:21.280+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[23] at save at WriterJsonBase.scala:43) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:59:21.280+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+[2025-02-11T15:59:21.283+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 10544 bytes)
+[2025-02-11T15:59:21.332+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.19.0.5:43703 (size: 89.6 KiB, free: 434.3 MiB)
+[2025-02-11T15:59:21.904+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 621 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:59:21.904+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2025-02-11T15:59:21.905+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: ResultStage 3 (save at WriterJsonBase.scala:43) finished in 0.701 s
+[2025-02-11T15:59:21.906+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:59:21.907+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2025-02-11T15:59:21.907+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO DAGScheduler: Job 3 finished: save at WriterJsonBase.scala:43, took 0.709863 s
+[2025-02-11T15:59:21.909+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:21 INFO FileFormatWriter: Start to commit write Job 74d3bfc0-4b01-4ce0-a901-a4a806e13314.
+[2025-02-11T15:59:22.142+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO FileFormatWriter: Write Job 74d3bfc0-4b01-4ce0-a901-a4a806e13314 committed. Elapsed time: 232 ms.
+[2025-02-11T15:59:22.143+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO FileFormatWriter: Finished processing stats for write job 74d3bfc0-4b01-4ce0-a901-a4a806e13314.
+[2025-02-11T15:59:22.148+0000] {spark_submit.py:491} INFO - Data written successfully to MinIO: s3a://bronze/Users/Users_20250211
+[2025-02-11T15:59:22.149+0000] {spark_submit.py:491} INFO - Data ingestion completed successfully in Bronze.
+[2025-02-11T15:59:22.162+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-02-11T15:59:22.163+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-02-11T15:59:22.218+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO SparkUI: Stopped Spark web UI at http://1921aa867cda:4040
+[2025-02-11T15:59:22.238+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-02-11T15:59:22.239+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-02-11T15:59:22.329+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-02-11T15:59:22.584+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO MemoryStore: MemoryStore cleared
+[2025-02-11T15:59:22.589+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO BlockManager: BlockManager stopped
+[2025-02-11T15:59:22.604+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-02-11T15:59:22.616+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-02-11T15:59:22.687+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO SparkContext: Successfully stopped SparkContext
+[2025-02-11T15:59:22.693+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO ShutdownHookManager: Shutdown hook called
+[2025-02-11T15:59:22.694+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO ShutdownHookManager: Deleting directory /tmp/spark-94f7c101-2a2d-4566-a9be-57535341efc0
+[2025-02-11T15:59:22.723+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO ShutdownHookManager: Deleting directory /tmp/spark-57939dce-dfab-4278-bca0-7f3f91e8f6f9
+[2025-02-11T15:59:22.799+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+[2025-02-11T15:59:22.801+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+[2025-02-11T15:59:22.804+0000] {spark_submit.py:491} INFO - 25/02/11 15:59:22 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
+[2025-02-11T15:59:23.453+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=DAG_ETL_daily_jobs, task_id=bronze_job, execution_date=20250211T155657, start_date=20250211T155717, end_date=20250211T155923
+[2025-02-11T15:59:23.642+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-02-11T15:59:23.873+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

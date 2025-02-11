@@ -1,13 +1,21 @@
 
 ### VS Code ###
-# Ignorar la configuración de VS Code
 .vscode/
 
 ### Mac OS ###
-# Ignorar archivos específicos de Mac OS
 .DS_Store
 
 
 ### Metals ###
-# Ignorar la carpeta de configuración de Metals
 .metals/
+
+### Metals ###
+.metals/
+
+### Airflow logs ###
+
+Airflow-Docker/logs/
+
+### Airflow pycache dags ###
+
+Airflow-Docker/__pycache__/
