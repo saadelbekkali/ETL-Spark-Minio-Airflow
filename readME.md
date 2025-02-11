@@ -150,10 +150,7 @@ While configuring `settings.json` is usually sufficient, you can also set up the
         ```  
   4. Restart VS Code and your terminal.
 
-
-
-
- 4. **Verify Configuration:**
+  5. Verify Configuration:
 
     - Open an integrated terminal in VS Code (`View -> Terminal`).
 
