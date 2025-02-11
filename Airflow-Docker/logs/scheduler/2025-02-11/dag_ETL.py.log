@@ -658,3 +658,12 @@ TypeError: __init__() got an unexpected keyword argument 'tag'
 [2025-02-11T16:02:04.664+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:02:04.663+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ETL.py
 [2025-02-11T16:02:04.722+0000] {processor.py:836} INFO - DAG(s) dict_keys(['DAG_ETL_daily_jobs']) retrieved from /opt/airflow/dags/dag_ETL.py
 [2025-02-11T16:02:04.792+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:02:04.792+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:02:04.876+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:02:04.876+0000] {dag.py:3504} INFO - Setting next_dagrun for DAG_ETL_daily_jobs to 2025-02-11T09:00:00+00:00, run_after=2025-02-12T09:00:00+00:00
+[2025-02-11T16:02:04.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_ETL.py took 0.263 seconds
+[2025-02-11T16:02:35.156+0000] {processor.py:157} INFO - Started process (PID=2813) to work on /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:02:35.158+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/dag_ETL.py for tasks to queue
+[2025-02-11T16:02:35.160+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:02:35.159+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:02:35.191+0000] {processor.py:836} INFO - DAG(s) dict_keys(['DAG_ETL_daily_jobs']) retrieved from /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:02:35.243+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:02:35.243+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:02:35.278+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:02:35.278+0000] {dag.py:3504} INFO - Setting next_dagrun for DAG_ETL_daily_jobs to 2025-02-11T09:00:00+00:00, run_after=2025-02-12T09:00:00+00:00
+[2025-02-11T16:02:35.303+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_ETL.py took 0.155 seconds
