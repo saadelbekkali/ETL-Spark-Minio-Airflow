@@ -170,7 +170,7 @@ While configuring `settings.json` is usually sufficient, you can also set up the
 
 * Navigate to the Airflow-Docker folder:
 
-```bash
+  ```bash
   cd Airflow-Docker
   ```
   
