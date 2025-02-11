@@ -106,9 +106,9 @@ To work optimally with this Java project (originally created in IntelliJ) in Vis
 
 Make sure to install the following VS Code extensions for complete Java, Scala, and Maven support:
 
-- **Extension Pack for Java**: Link - Includes basic tools for Java development.
-- **Metals**: Link - Complete Scala support.
-- **Maven for Java**: Link - Tools for working with Maven projects.
+- **Extension Pack for Java**: [Link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) - Includes basic tools for Java development.
+- **Metals**: [Link](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)  - Complete Scala support.
+- **Maven for Java**: [Link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven) - Tools for working with Maven projects.
 - **Project Manager for Java**: (Included in "Extension Pack for Java" or install separately if needed) - Facilitates Java project management.
 - **Test Runner for Java**: (Included in "Extension Pack for Java" or install separately if needed) - Allows running and debugging unit tests.
 
