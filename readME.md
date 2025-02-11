@@ -13,6 +13,7 @@ A modular data pipeline that ingests data daily from the [Fake Store API](https:
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation & Setup](#installation--setup)
+  - [VS Code Configutation](#vs-code-configuration)
 - [Accessing the Services](#accessing-the-services)
 - [Troubleshooting](#troubleshooting)
 - [Improvements & Future Work](#improvements--future-work)
@@ -97,6 +98,65 @@ The project was developed with the following goals in mind:
 - **Git:** To clone the repository.
 - **Maven:** To build the Scala project.
 
+### Vs Code Configuration
+
+To work optimally with this Java project (originally created in IntelliJ) in Visual Studio Code (VS Code), you'll need to install certain extensions and configure the Java SDK.
+
+1. **Install Required Extensions:**
+
+Make sure to install the following VS Code extensions for complete Java, Scala, and Maven support:
+
+- **Extension Pack for Java**: Link - Includes basic tools for Java development.
+- **Metals**: Link - Complete Scala support.
+- **Maven for Java**: Link - Tools for working with Maven projects.
+- **Project Manager for Java**: (Included in "Extension Pack for Java" or install separately if needed) - Facilitates Java project management.
+- **Test Runner for Java**: (Included in "Extension Pack for Java" or install separately if needed) - Allows running and debugging unit tests.
+
+ 2. **Configure Azul Zulu 11 SDK:**
+
+Since the project was originally developed with Azul Zulu 11, it's important to configure VS Code to use the same SDK.
+
+#### Install Azul Zulu 11:
+If you haven't already, download and install Azul Zulu 11 from a trusted source (e.g., Azul's website).
+
+#### Configure the SDK in VS Code:
+
+1. Open VS Code settings: `File -> Preferences -> Settings` .
+2. Search for `java.configuration.runtimes`.
+3. Edit the `settings.json` file (click "Edit in settings.json" if necessary) and add the following configuration, adjusting the path to your Azul Zulu 11 installation directory:
+
+```json
+"java.configuration.runtimes": [
+    {
+        "name": "JavaSE-11",
+        "path": "/path/to/your/azul-zulu-11",
+        "default": true
+    }
+]
+
+ 3. **Configure JAVA_HOME Environment Variable (Optional but recommended):**
+
+While configuring `settings.json` is usually sufficient, you can also set up the `JAVA_HOME` environment variable to ensure VS Code and other tools use the correct SDK.
+
+1. Open your operating system's environment variables settings. The process varies by operating system (Windows, macOS, Linux).
+2. Create or edit the `JAVA_HOME` variable:
+   - Set `JAVA_HOME` to your Azul Zulu 11 installation directory (same path used in `settings.json`).
+3. Add `$JAVA_HOME/bin` to the `PATH` variable:
+   - This ensures `java` and `javac` commands use the correct version.
+4. Restart VS Code and your terminal.
+
+## 4. Verify Configuration
+
+1. Open an integrated terminal in VS Code (`View -> Terminal`).
+2. Run the command: `java -version`
+
+You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
+
+```text
+openjdk version "11.0.25" 2021-04-20
+OpenJDK Runtime Environment (Zulu 11.48+21-CA) (build 11.0.25+10-LTS)
+OpenJDK 64-Bit Server VM (Zulu 11.48+21-CA) (build 11.0.25+10-LTS, mixed mode)
+
 ### Installation & Setup
 
 1. **Clone the Repository:**
@@ -105,6 +165,7 @@ The project was developed with the following goals in mind:
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
    ```
+   
 2. **Build and Start the Docker Environment::**
 
 * Navigate to the Airflow-Docker folder:
