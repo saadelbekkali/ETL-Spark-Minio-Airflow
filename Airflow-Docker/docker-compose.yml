@@ -174,8 +174,8 @@ services:
        airflow db init &&
        airflow users create \
          --username airflow \
-         --firstname Peter \
-         --lastname Parker \
+         --firstname Saad \
+         --lastname El Bekkali \
          --role Admin \
          --email admin@example.com \
          --password airflow
