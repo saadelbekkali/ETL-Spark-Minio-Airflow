@@ -15,6 +15,7 @@ A modular data pipeline that ingests data daily from the [Fake Store API](https:
   - [Installation & Setup](#installation--setup)
 - [Accessing the Services](#accessing-the-services)
 - [Troubleshooting](#troubleshooting)
+- [Improvements & Future Work](#improvements--future-work)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -146,7 +147,16 @@ Once the JAR file is generated (typically under the target folder), copy it to t
 ### Accessing the Services
 
 - *Airflow:*
-UI is accessible at http://localhost:8081. Refer to your Docker Compose configuration for default credentials if required.
+UI is accessible at http://localhost:8081. Refer to your Docker Compose configuration for default credentials if required. Configuration of Spark connection:
+
+   1. Access Airflow UI at http://localhost:8081
+   2. Navigate to Admin > Connections
+   3. Find or create 'spark_default' connection
+   4. Configure with the following settings:
+     - Connection Type: Spark
+     - Host: spark://spark
+     - Port: 7077 (In this case)
+   5. Save the connection
 
 - *MinIO:*
 Accessible via http://localhost:9000. Use the credentials provided in the Docker Compose file to log in.
@@ -172,7 +182,28 @@ UI is accessible at http://localhost:8080.Monitor Spark logs and job status via 
 - Confirm that the Scala JAR file is correctly built and placed.
 - Inspect the Spark container logs for any execution errors related to the ETL job.
 
-### Contributing
+## Improvements & Future Work
+
+- **Enhanced Catalog Access:**  
+  Improve the data catalog so that it is accessible via standard SQL interfaces instead of relying solely on Spark SQL. This change will offer a more familiar querying experience and simplify integration with various BI tools.
+
+- **Cloud Deployment:**  
+  Explore deploying the entire pipeline in the cloud to take advantage of scalable resources, managed services, and global accessibility. This includes setting up cloud-native services for Airflow, Spark, and MinIO (or their alternatives).
+
+- **Enhanced Monitoring:**  
+  Integrate detailed logging and monitoring within Airflow to better track ETL job performance and quickly diagnose failures.
+  
+- **Error Handling & Notifications:**  
+  Implement robust error handling mechanisms and set up alert notifications for pipeline failures.
+
+- **Modularization:**  
+  Further modularize the ETL code for improved maintainability and testing, including adding unit and integration tests.
+
+- **Scalability Enhancements:**  
+  Investigate scaling the pipeline components (e.g., using Kubernetes for container orchestration) to handle larger data volumes.
+
+
+## Contributing
 
 We welcome contributions! If you'd like to contribute:
 1. Fork the repository
