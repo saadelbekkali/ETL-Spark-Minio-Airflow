@@ -138,17 +138,18 @@ If you haven't already, download and install Azul Zulu 11 from a trusted source 
 
 While configuring `settings.json` is usually sufficient, you can also set up the `JAVA_HOME` environment variable to ensure VS Code and other tools use the correct SDK.
 
-  1. Open your operating system's environment variables settings. The process varies by operating system (Windows, macOS, Linux).
-  2. Create or edit the `JAVA_HOME` variable:
-     - Set `JAVA_HOME` to your Azul Zulu 11 installation directory (same path used in `settings.json`).
-  3. Add `$JAVA_HOME/bin` to the `PATH` variable:
-     - This ensures `java` and `javac` commands use the correct version. Please make sure where it is your Zulu Path!
+   1. Open your operating system's environment variables settings. The process varies by operating system (Windows, macOS, Linux).
+    2. Create or edit the `JAVA_HOME` variable:
+       - Set `JAVA_HOME` to your Azul Zulu 11 installation directory (same path used in `settings.json`).
+    3. Add `$JAVA_HOME/bin` to the `PATH` variable:
+       - This ensures `java` and `javac` commands use the correct version. Please make sure where it is your Zulu Path!
 
-       ```text
-        export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/azul-11/Contents/Home
-        export PATH=$JAVA_HOME/bin:$PATH
+        ```text
+          export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/azul-11/Contents/Home
+          export PATH=$JAVA_HOME/bin:$PATH
 
-  4. Restart VS Code and your terminal.
+    4. Restart VS Code and your terminal.
+    
 
 4. **Verify Configuration:**
 
