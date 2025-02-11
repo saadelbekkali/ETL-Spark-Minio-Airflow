@@ -15,8 +15,10 @@ default_args = {
 dag = DAG(
     'DAG_ETL_daily_jobs',
     default_args=default_args,
+    description = "ETL daily from FakeStoreApi",
     schedule_interval="0 9 * * *",  # Ejecuta diariamente a las 9:00 AM
-    catchup=False
+    catchup=False,
+    tags = ["ETL"]
 )
 
 # Configuración común para SparkSubmitOperator
@@ -55,7 +57,7 @@ common_conf = {
 # Task para ejecutar el job Bronze
 bronze_job = SparkSubmitOperator(
     task_id='bronze_job',
-    application='/opt/airflow/jars/scala-maven-project-2.0-SNAPSHOT.jar',
+    application='/opt/airflow/jars/scala-maven-project-1.0.jar',
     java_class="com.Main",
     application_args=["bronze"],
     packages=common_packages,
@@ -68,7 +70,7 @@ bronze_job = SparkSubmitOperator(
 # Task para ejecutar el job Silver
 silver_job = SparkSubmitOperator(
     task_id='silver_job',
-    application='/opt/airflow/jars/scala-maven-project-2.0-SNAPSHOT.jar',
+    application='/opt/airflow/jars/scala-maven-project-1.0.jar',
     java_class="com.Main",
     application_args=["silver"],
     packages=common_packages,
@@ -81,7 +83,7 @@ silver_job = SparkSubmitOperator(
 # Task para ejecutar el job Gold
 gold_job = SparkSubmitOperator(
     task_id='gold_job',
-    application='/opt/airflow/jars/scala-maven-project-2.0-SNAPSHOT.jar',
+    application='/opt/airflow/jars/scala-maven-project-1.0.jar',
     java_class="com.Main",
     application_args=["gold"],
     packages=common_packages,

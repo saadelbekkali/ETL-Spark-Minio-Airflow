@@ -1,0 +1,416 @@
+[2025-02-11T15:24:03.726+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_ETL_daily_jobs.bronze_job scheduled__2025-02-10T09:00:00+00:00 [queued]>
+[2025-02-11T15:24:03.742+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_ETL_daily_jobs.bronze_job scheduled__2025-02-10T09:00:00+00:00 [queued]>
+[2025-02-11T15:24:03.743+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-02-11T15:24:03.774+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): bronze_job> on 2025-02-10 09:00:00+00:00
+[2025-02-11T15:24:03.791+0000] {standard_task_runner.py:57} INFO - Started process 47 to run task
+[2025-02-11T15:24:03.801+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'DAG_ETL_daily_jobs', 'bronze_job', 'scheduled__2025-02-10T09:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dag_ETL.py', '--cfg-path', '/tmp/tmpub6yy5er']
+[2025-02-11T15:24:03.803+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask bronze_job
+[2025-02-11T15:24:04.057+0000] {task_command.py:410} INFO - Running <TaskInstance: DAG_ETL_daily_jobs.bronze_job scheduled__2025-02-10T09:00:00+00:00 [running]> on host 1921aa867cda
+[2025-02-11T15:24:04.683+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='saadelbekkali' AIRFLOW_CTX_DAG_ID='DAG_ETL_daily_jobs' AIRFLOW_CTX_TASK_ID='bronze_job' AIRFLOW_CTX_EXECUTION_DATE='2025-02-10T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-10T09:00:00+00:00'
+[2025-02-11T15:24:04.715+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2025-02-11T15:24:04.767+0000] {spark_submit.py:340} INFO - Spark-Submit cmd: spark-submit --master spark://spark:7077 --conf spark.jars.packages=com.typesafe:config:1.4.2,com.lihaoyi:requests_2.12:0.8.0,io.circe:circe-core_2.12:0.14.1,io.circe:circe-parser_2.12:0.14.1,io.circe:circe-generic_2.12:0.14.1,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.12.539,org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1 --conf spark.driver.extraClassPath=/opt/***/jars/* --conf spark.executor.extraClassPath=/opt/***/jars/* --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider --conf spark.driver.userClassPathFirst=true --conf spark.executor.userClassPathFirst=true --conf spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions --conf spark.sql.catalog.silver_catalog=org.apache.iceberg.spark.SparkCatalog --conf spark.sql.catalog.silver_catalog.type=hadoop --conf spark.sql.catalog.silver_catalog.warehouse=s3a://silver/ --conf spark.sql.catalog.gold_catalog=org.apache.iceberg.spark.SparkCatalog --conf spark.sql.catalog.gold_catalog.type=hadoop --conf spark.sql.catalog.gold_catalog.warehouse=s3a://gold/ --packages com.typesafe:config:1.4.2,com.lihaoyi:requests_2.12:0.8.0,io.circe:circe-core_2.12:0.14.1,io.circe:circe-parser_2.12:0.14.1,io.circe:circe-generic_2.12:0.14.1,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.12.539,org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1 --name arrow-spark --class com.Main --verbose /opt/***/jars/scala-maven-project-2.0-SNAPSHOT.jar bronze
+[2025-02-11T15:24:14.607+0000] {spark_submit.py:491} INFO - Using properties file: null
+[2025-02-11T15:24:15.046+0000] {spark_submit.py:491} INFO - Parsed arguments:
+[2025-02-11T15:24:15.050+0000] {spark_submit.py:491} INFO - master                  spark://spark:7077
+[2025-02-11T15:24:15.051+0000] {spark_submit.py:491} INFO - remote                  null
+[2025-02-11T15:24:15.052+0000] {spark_submit.py:491} INFO - deployMode              null
+[2025-02-11T15:24:15.053+0000] {spark_submit.py:491} INFO - executorMemory          null
+[2025-02-11T15:24:15.056+0000] {spark_submit.py:491} INFO - executorCores           null
+[2025-02-11T15:24:15.057+0000] {spark_submit.py:491} INFO - totalExecutorCores      null
+[2025-02-11T15:24:15.057+0000] {spark_submit.py:491} INFO - propertiesFile          null
+[2025-02-11T15:24:15.058+0000] {spark_submit.py:491} INFO - driverMemory            null
+[2025-02-11T15:24:15.059+0000] {spark_submit.py:491} INFO - driverCores             null
+[2025-02-11T15:24:15.060+0000] {spark_submit.py:491} INFO - driverExtraClassPath    /opt/***/jars/*
+[2025-02-11T15:24:15.062+0000] {spark_submit.py:491} INFO - driverExtraLibraryPath  null
+[2025-02-11T15:24:15.062+0000] {spark_submit.py:491} INFO - driverExtraJavaOptions  null
+[2025-02-11T15:24:15.063+0000] {spark_submit.py:491} INFO - supervise               false
+[2025-02-11T15:24:15.064+0000] {spark_submit.py:491} INFO - queue                   null
+[2025-02-11T15:24:15.065+0000] {spark_submit.py:491} INFO - numExecutors            null
+[2025-02-11T15:24:15.065+0000] {spark_submit.py:491} INFO - files                   null
+[2025-02-11T15:24:15.066+0000] {spark_submit.py:491} INFO - pyFiles                 null
+[2025-02-11T15:24:15.067+0000] {spark_submit.py:491} INFO - archives                null
+[2025-02-11T15:24:15.068+0000] {spark_submit.py:491} INFO - mainClass               com.Main
+[2025-02-11T15:24:15.068+0000] {spark_submit.py:491} INFO - primaryResource         file:/opt/***/jars/scala-maven-project-2.0-SNAPSHOT.jar
+[2025-02-11T15:24:15.069+0000] {spark_submit.py:491} INFO - name                    arrow-spark
+[2025-02-11T15:24:15.070+0000] {spark_submit.py:491} INFO - childArgs               [bronze]
+[2025-02-11T15:24:15.071+0000] {spark_submit.py:491} INFO - jars                    null
+[2025-02-11T15:24:15.071+0000] {spark_submit.py:491} INFO - packages                com.typesafe:config:1.4.2,com.lihaoyi:requests_2.12:0.8.0,io.circe:circe-core_2.12:0.14.1,io.circe:circe-parser_2.12:0.14.1,io.circe:circe-generic_2.12:0.14.1,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.12.539,org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1
+[2025-02-11T15:24:15.072+0000] {spark_submit.py:491} INFO - packagesExclusions      null
+[2025-02-11T15:24:15.073+0000] {spark_submit.py:491} INFO - repositories            null
+[2025-02-11T15:24:15.073+0000] {spark_submit.py:491} INFO - verbose                 true
+[2025-02-11T15:24:15.074+0000] {spark_submit.py:491} INFO - 
+[2025-02-11T15:24:15.074+0000] {spark_submit.py:491} INFO - Spark properties used, including those specified through
+[2025-02-11T15:24:15.075+0000] {spark_submit.py:491} INFO - --conf and those from the properties file null:
+[2025-02-11T15:24:15.076+0000] {spark_submit.py:491} INFO - (spark.driver.extraClassPath,/opt/***/jars/*)
+[2025-02-11T15:24:15.076+0000] {spark_submit.py:491} INFO - (spark.driver.userClassPathFirst,true)
+[2025-02-11T15:24:15.077+0000] {spark_submit.py:491} INFO - (spark.executor.extraClassPath,/opt/***/jars/*)
+[2025-02-11T15:24:15.077+0000] {spark_submit.py:491} INFO - (spark.executor.userClassPathFirst,true)
+[2025-02-11T15:24:15.078+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.access.key,*********(redacted))
+[2025-02-11T15:24:15.079+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.aws.credentials.provider,org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider)
+[2025-02-11T15:24:15.079+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.endpoint,http://minio:9000)
+[2025-02-11T15:24:15.080+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.impl,org.apache.hadoop.fs.s3a.S3AFileSystem)
+[2025-02-11T15:24:15.081+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.path.style.access,true)
+[2025-02-11T15:24:15.081+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.secret.key,*********(redacted))
+[2025-02-11T15:24:15.082+0000] {spark_submit.py:491} INFO - (spark.jars.packages,com.typesafe:config:1.4.2,com.lihaoyi:requests_2.12:0.8.0,io.circe:circe-core_2.12:0.14.1,io.circe:circe-parser_2.12:0.14.1,io.circe:circe-generic_2.12:0.14.1,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.12.539,org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1)
+[2025-02-11T15:24:15.083+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.gold_catalog,org.apache.iceberg.spark.SparkCatalog)
+[2025-02-11T15:24:15.084+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.gold_catalog.type,hadoop)
+[2025-02-11T15:24:15.085+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.gold_catalog.warehouse,s3a://gold/)
+[2025-02-11T15:24:15.085+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.silver_catalog,org.apache.iceberg.spark.SparkCatalog)
+[2025-02-11T15:24:15.086+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.silver_catalog.type,hadoop)
+[2025-02-11T15:24:15.087+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.silver_catalog.warehouse,s3a://silver/)
+[2025-02-11T15:24:15.089+0000] {spark_submit.py:491} INFO - (spark.sql.extensions,org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions)
+[2025-02-11T15:24:15.090+0000] {spark_submit.py:491} INFO - 
+[2025-02-11T15:24:15.091+0000] {spark_submit.py:491} INFO - 
+[2025-02-11T15:24:15.566+0000] {spark_submit.py:491} INFO - :: loading settings :: url = jar:file:/opt/spark-3.4.0-bin-hadoop3/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-02-11T15:24:15.882+0000] {spark_submit.py:491} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-02-11T15:24:15.883+0000] {spark_submit.py:491} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-02-11T15:24:15.953+0000] {spark_submit.py:491} INFO - com.typesafe#config added as a dependency
+[2025-02-11T15:24:15.954+0000] {spark_submit.py:491} INFO - com.lihaoyi#requests_2.12 added as a dependency
+[2025-02-11T15:24:15.955+0000] {spark_submit.py:491} INFO - io.circe#circe-core_2.12 added as a dependency
+[2025-02-11T15:24:15.956+0000] {spark_submit.py:491} INFO - io.circe#circe-parser_2.12 added as a dependency
+[2025-02-11T15:24:15.956+0000] {spark_submit.py:491} INFO - io.circe#circe-generic_2.12 added as a dependency
+[2025-02-11T15:24:15.957+0000] {spark_submit.py:491} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-02-11T15:24:15.958+0000] {spark_submit.py:491} INFO - com.amazonaws#aws-java-sdk-bundle added as a dependency
+[2025-02-11T15:24:15.961+0000] {spark_submit.py:491} INFO - org.apache.iceberg#iceberg-spark-runtime-3.4_2.12 added as a dependency
+[2025-02-11T15:24:15.962+0000] {spark_submit.py:491} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-35fe0e53-0948-4ef7-bc71-0a966f572522;1.0
+[2025-02-11T15:24:15.963+0000] {spark_submit.py:491} INFO - confs: [default]
+[2025-02-11T15:24:18.572+0000] {spark_submit.py:491} INFO - found com.typesafe#config;1.4.2 in central
+[2025-02-11T15:24:18.787+0000] {spark_submit.py:491} INFO - found com.lihaoyi#requests_2.12;0.8.0 in central
+[2025-02-11T15:24:19.050+0000] {spark_submit.py:491} INFO - found com.lihaoyi#geny_2.12;1.0.0 in central
+[2025-02-11T15:24:19.148+0000] {spark_submit.py:491} INFO - found io.circe#circe-core_2.12;0.14.1 in central
+[2025-02-11T15:24:19.311+0000] {spark_submit.py:491} INFO - found io.circe#circe-numbers_2.12;0.14.1 in central
+[2025-02-11T15:24:19.463+0000] {spark_submit.py:491} INFO - found org.typelevel#cats-core_2.12;2.6.1 in central
+[2025-02-11T15:24:19.700+0000] {spark_submit.py:491} INFO - found org.typelevel#cats-kernel_2.12;2.6.1 in central
+[2025-02-11T15:24:19.790+0000] {spark_submit.py:491} INFO - found org.typelevel#simulacrum-scalafix-annotations_2.12;0.5.4 in central
+[2025-02-11T15:24:19.858+0000] {spark_submit.py:491} INFO - found io.circe#circe-parser_2.12;0.14.1 in central
+[2025-02-11T15:24:19.985+0000] {spark_submit.py:491} INFO - found io.circe#circe-jawn_2.12;0.14.1 in central
+[2025-02-11T15:24:20.072+0000] {spark_submit.py:491} INFO - found org.typelevel#jawn-parser_2.12;1.1.2 in central
+[2025-02-11T15:24:20.153+0000] {spark_submit.py:491} INFO - found io.circe#circe-generic_2.12;0.14.1 in central
+[2025-02-11T15:24:20.215+0000] {spark_submit.py:491} INFO - found com.chuusai#shapeless_2.12;2.3.7 in central
+[2025-02-11T15:24:22.132+0000] {spark_submit.py:491} INFO - found org.apache.hadoop#hadoop-aws;3.3.1 in central
+[2025-02-11T15:24:23.349+0000] {spark_submit.py:491} INFO - found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2025-02-11T15:24:24.163+0000] {spark_submit.py:491} INFO - found com.amazonaws#aws-java-sdk-bundle;1.12.539 in central
+[2025-02-11T15:24:24.208+0000] {spark_submit.py:491} INFO - found org.apache.iceberg#iceberg-spark-runtime-3.4_2.12;1.3.1 in central
+[2025-02-11T15:24:24.259+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar ...
+[2025-02-11T15:24:24.331+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] com.typesafe#config;1.4.2!config.jar(bundle) (78ms)
+[2025-02-11T15:24:24.351+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/com/lihaoyi/requests_2.12/0.8.0/requests_2.12-0.8.0.jar ...
+[2025-02-11T15:24:24.375+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] com.lihaoyi#requests_2.12;0.8.0!requests_2.12.jar (40ms)
+[2025-02-11T15:24:24.391+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/io/circe/circe-core_2.12/0.14.1/circe-core_2.12-0.14.1.jar ...
+[2025-02-11T15:24:24.518+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] io.circe#circe-core_2.12;0.14.1!circe-core_2.12.jar (141ms)
+[2025-02-11T15:24:24.533+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/io/circe/circe-parser_2.12/0.14.1/circe-parser_2.12-0.14.1.jar ...
+[2025-02-11T15:24:24.550+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] io.circe#circe-parser_2.12;0.14.1!circe-parser_2.12.jar (31ms)
+[2025-02-11T15:24:24.565+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/io/circe/circe-generic_2.12/0.14.1/circe-generic_2.12-0.14.1.jar ...
+[2025-02-11T15:24:24.592+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] io.circe#circe-generic_2.12;0.14.1!circe-generic_2.12.jar (41ms)
+[2025-02-11T15:24:24.607+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar ...
+[2025-02-11T15:24:24.701+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-aws;3.3.1!hadoop-aws.jar (106ms)
+[2025-02-11T15:24:25.909+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.539/aws-java-sdk-bundle-1.12.539.jar ...
+[2025-02-11T15:24:56.987+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] com.amazonaws#aws-java-sdk-bundle;1.12.539!aws-java-sdk-bundle.jar (32267ms)
+[2025-02-11T15:24:57.058+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.4_2.12/1.3.1/iceberg-spark-runtime-3.4_2.12-1.3.1.jar ...
+[2025-02-11T15:25:02.557+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.apache.iceberg#iceberg-spark-runtime-3.4_2.12;1.3.1!iceberg-spark-runtime-3.4_2.12.jar (5533ms)
+[2025-02-11T15:25:02.606+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/com/lihaoyi/geny_2.12/1.0.0/geny_2.12-1.0.0.jar ...
+[2025-02-11T15:25:02.732+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] com.lihaoyi#geny_2.12;1.0.0!geny_2.12.jar (169ms)
+[2025-02-11T15:25:02.802+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/io/circe/circe-numbers_2.12/0.14.1/circe-numbers_2.12-0.14.1.jar ...
+[2025-02-11T15:25:02.822+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] io.circe#circe-numbers_2.12;0.14.1!circe-numbers_2.12.jar (81ms)
+[2025-02-11T15:25:02.843+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/typelevel/cats-core_2.12/2.6.1/cats-core_2.12-2.6.1.jar ...
+[2025-02-11T15:25:03.522+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.typelevel#cats-core_2.12;2.6.1!cats-core_2.12.jar (694ms)
+[2025-02-11T15:25:03.563+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/2.6.1/cats-kernel_2.12-2.6.1.jar ...
+[2025-02-11T15:25:03.851+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.typelevel#cats-kernel_2.12;2.6.1!cats-kernel_2.12.jar (305ms)
+[2025-02-11T15:25:03.871+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_2.12/0.5.4/simulacrum-scalafix-annotations_2.12-0.5.4.jar ...
+[2025-02-11T15:25:03.895+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.typelevel#simulacrum-scalafix-annotations_2.12;0.5.4!simulacrum-scalafix-annotations_2.12.jar (42ms)
+[2025-02-11T15:25:03.915+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/io/circe/circe-jawn_2.12/0.14.1/circe-jawn_2.12-0.14.1.jar ...
+[2025-02-11T15:25:03.935+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] io.circe#circe-jawn_2.12;0.14.1!circe-jawn_2.12.jar (35ms)
+[2025-02-11T15:25:03.961+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/typelevel/jawn-parser_2.12/1.1.2/jawn-parser_2.12-1.1.2.jar ...
+[2025-02-11T15:25:04.000+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.typelevel#jawn-parser_2.12;1.1.2!jawn-parser_2.12.jar (54ms)
+[2025-02-11T15:25:04.017+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.7/shapeless_2.12-2.3.7.jar ...
+[2025-02-11T15:25:04.204+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] com.chuusai#shapeless_2.12;2.3.7!shapeless_2.12.jar(bundle) (201ms)
+[2025-02-11T15:25:04.225+0000] {spark_submit.py:491} INFO - downloading https://repo1.maven.org/maven2/org/wildfly/openssl/wildfly-openssl/1.0.7.Final/wildfly-openssl-1.0.7.Final.jar ...
+[2025-02-11T15:25:04.289+0000] {spark_submit.py:491} INFO - [SUCCESSFUL ] org.wildfly.openssl#wildfly-openssl;1.0.7.Final!wildfly-openssl.jar (80ms)
+[2025-02-11T15:25:04.291+0000] {spark_submit.py:491} INFO - :: resolution report :: resolve 8290ms :: artifacts dl 40044ms
+[2025-02-11T15:25:04.293+0000] {spark_submit.py:491} INFO - :: modules in use:
+[2025-02-11T15:25:04.299+0000] {spark_submit.py:491} INFO - com.amazonaws#aws-java-sdk-bundle;1.12.539 from central in [default]
+[2025-02-11T15:25:04.300+0000] {spark_submit.py:491} INFO - com.chuusai#shapeless_2.12;2.3.7 from central in [default]
+[2025-02-11T15:25:04.300+0000] {spark_submit.py:491} INFO - com.lihaoyi#geny_2.12;1.0.0 from central in [default]
+[2025-02-11T15:25:04.301+0000] {spark_submit.py:491} INFO - com.lihaoyi#requests_2.12;0.8.0 from central in [default]
+[2025-02-11T15:25:04.302+0000] {spark_submit.py:491} INFO - com.typesafe#config;1.4.2 from central in [default]
+[2025-02-11T15:25:04.303+0000] {spark_submit.py:491} INFO - io.circe#circe-core_2.12;0.14.1 from central in [default]
+[2025-02-11T15:25:04.304+0000] {spark_submit.py:491} INFO - io.circe#circe-generic_2.12;0.14.1 from central in [default]
+[2025-02-11T15:25:04.305+0000] {spark_submit.py:491} INFO - io.circe#circe-jawn_2.12;0.14.1 from central in [default]
+[2025-02-11T15:25:04.305+0000] {spark_submit.py:491} INFO - io.circe#circe-numbers_2.12;0.14.1 from central in [default]
+[2025-02-11T15:25:04.306+0000] {spark_submit.py:491} INFO - io.circe#circe-parser_2.12;0.14.1 from central in [default]
+[2025-02-11T15:25:04.307+0000] {spark_submit.py:491} INFO - org.apache.hadoop#hadoop-aws;3.3.1 from central in [default]
+[2025-02-11T15:25:04.307+0000] {spark_submit.py:491} INFO - org.apache.iceberg#iceberg-spark-runtime-3.4_2.12;1.3.1 from central in [default]
+[2025-02-11T15:25:04.308+0000] {spark_submit.py:491} INFO - org.typelevel#cats-core_2.12;2.6.1 from central in [default]
+[2025-02-11T15:25:04.309+0000] {spark_submit.py:491} INFO - org.typelevel#cats-kernel_2.12;2.6.1 from central in [default]
+[2025-02-11T15:25:04.309+0000] {spark_submit.py:491} INFO - org.typelevel#jawn-parser_2.12;1.1.2 from central in [default]
+[2025-02-11T15:25:04.310+0000] {spark_submit.py:491} INFO - org.typelevel#simulacrum-scalafix-annotations_2.12;0.5.4 from central in [default]
+[2025-02-11T15:25:04.310+0000] {spark_submit.py:491} INFO - org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2025-02-11T15:25:04.312+0000] {spark_submit.py:491} INFO - :: evicted modules:
+[2025-02-11T15:25:04.313+0000] {spark_submit.py:491} INFO - com.amazonaws#aws-java-sdk-bundle;1.11.901 by [com.amazonaws#aws-java-sdk-bundle;1.12.539] in [default]
+[2025-02-11T15:25:04.314+0000] {spark_submit.py:491} INFO - ---------------------------------------------------------------------
+[2025-02-11T15:25:04.315+0000] {spark_submit.py:491} INFO - |                  |            modules            ||   artifacts   |
+[2025-02-11T15:25:04.316+0000] {spark_submit.py:491} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-02-11T15:25:04.319+0000] {spark_submit.py:491} INFO - ---------------------------------------------------------------------
+[2025-02-11T15:25:04.320+0000] {spark_submit.py:491} INFO - |      default     |   18  |   17  |   17  |   1   ||   17  |   17  |
+[2025-02-11T15:25:04.321+0000] {spark_submit.py:491} INFO - ---------------------------------------------------------------------
+[2025-02-11T15:25:04.435+0000] {spark_submit.py:491} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-35fe0e53-0948-4ef7-bc71-0a966f572522
+[2025-02-11T15:25:04.436+0000] {spark_submit.py:491} INFO - confs: [default]
+[2025-02-11T15:25:23.148+0000] {spark_submit.py:491} INFO - 17 artifacts copied, 0 already retrieved (376472kB/18708ms)
+[2025-02-11T15:25:25.938+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-02-11T15:25:27.466+0000] {spark_submit.py:491} INFO - Main class:
+[2025-02-11T15:25:27.468+0000] {spark_submit.py:491} INFO - com.Main
+[2025-02-11T15:25:27.469+0000] {spark_submit.py:491} INFO - Arguments:
+[2025-02-11T15:25:27.470+0000] {spark_submit.py:491} INFO - bronze
+[2025-02-11T15:25:27.526+0000] {spark_submit.py:491} INFO - Spark config:
+[2025-02-11T15:25:27.527+0000] {spark_submit.py:491} INFO - (spark.app.name,arrow-spark)
+[2025-02-11T15:25:27.527+0000] {spark_submit.py:491} INFO - (spark.app.submitTime,1739287527315)
+[2025-02-11T15:25:27.528+0000] {spark_submit.py:491} INFO - (spark.driver.extraClassPath,/opt/***/jars/*)
+[2025-02-11T15:25:27.571+0000] {spark_submit.py:491} INFO - (spark.driver.userClassPathFirst,true)
+[2025-02-11T15:25:27.573+0000] {spark_submit.py:491} INFO - (spark.executor.extraClassPath,/opt/***/jars/*)
+[2025-02-11T15:25:27.575+0000] {spark_submit.py:491} INFO - (spark.executor.userClassPathFirst,true)
+[2025-02-11T15:25:27.580+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.access.key,*********(redacted))
+[2025-02-11T15:25:27.582+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.aws.credentials.provider,org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider)
+[2025-02-11T15:25:27.587+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.endpoint,http://minio:9000)
+[2025-02-11T15:25:27.592+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.impl,org.apache.hadoop.fs.s3a.S3AFileSystem)
+[2025-02-11T15:25:27.597+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.path.style.access,true)
+[2025-02-11T15:25:27.599+0000] {spark_submit.py:491} INFO - (spark.hadoop.fs.s3a.secret.key,*********(redacted))
+[2025-02-11T15:25:27.604+0000] {spark_submit.py:491} INFO - (spark.jars,file:///home/***/.ivy2/jars/com.typesafe_config-1.4.2.jar,file:///home/***/.ivy2/jars/com.lihaoyi_requests_2.12-0.8.0.jar,file:///home/***/.ivy2/jars/io.circe_circe-core_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/io.circe_circe-parser_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/io.circe_circe-generic_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.1.jar,file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.539.jar,file:///home/***/.ivy2/jars/org.apache.iceberg_iceberg-spark-runtime-3.4_2.12-1.3.1.jar,file:///home/***/.ivy2/jars/com.lihaoyi_geny_2.12-1.0.0.jar,file:///home/***/.ivy2/jars/io.circe_circe-numbers_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/org.typelevel_cats-core_2.12-2.6.1.jar,file:///home/***/.ivy2/jars/org.typelevel_cats-kernel_2.12-2.6.1.jar,file:///home/***/.ivy2/jars/org.typelevel_simulacrum-scalafix-annotations_2.12-0.5.4.jar,file:///home/***/.ivy2/jars/io.circe_circe-jawn_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/org.typelevel_jawn-parser_2.12-1.1.2.jar,file:///home/***/.ivy2/jars/com.chuusai_shapeless_2.12-2.3.7.jar,file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar,file:/opt/***/jars/scala-maven-project-2.0-SNAPSHOT.jar)
+[2025-02-11T15:25:27.613+0000] {spark_submit.py:491} INFO - (spark.jars.packages,com.typesafe:config:1.4.2,com.lihaoyi:requests_2.12:0.8.0,io.circe:circe-core_2.12:0.14.1,io.circe:circe-parser_2.12:0.14.1,io.circe:circe-generic_2.12:0.14.1,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.12.539,org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1)
+[2025-02-11T15:25:27.618+0000] {spark_submit.py:491} INFO - (spark.master,spark://spark:7077)
+[2025-02-11T15:25:27.620+0000] {spark_submit.py:491} INFO - (spark.repl.local.jars,file:///home/***/.ivy2/jars/com.typesafe_config-1.4.2.jar,file:///home/***/.ivy2/jars/com.lihaoyi_requests_2.12-0.8.0.jar,file:///home/***/.ivy2/jars/io.circe_circe-core_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/io.circe_circe-parser_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/io.circe_circe-generic_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.1.jar,file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.539.jar,file:///home/***/.ivy2/jars/org.apache.iceberg_iceberg-spark-runtime-3.4_2.12-1.3.1.jar,file:///home/***/.ivy2/jars/com.lihaoyi_geny_2.12-1.0.0.jar,file:///home/***/.ivy2/jars/io.circe_circe-numbers_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/org.typelevel_cats-core_2.12-2.6.1.jar,file:///home/***/.ivy2/jars/org.typelevel_cats-kernel_2.12-2.6.1.jar,file:///home/***/.ivy2/jars/org.typelevel_simulacrum-scalafix-annotations_2.12-0.5.4.jar,file:///home/***/.ivy2/jars/io.circe_circe-jawn_2.12-0.14.1.jar,file:///home/***/.ivy2/jars/org.typelevel_jawn-parser_2.12-1.1.2.jar,file:///home/***/.ivy2/jars/com.chuusai_shapeless_2.12-2.3.7.jar,file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar)
+[2025-02-11T15:25:27.629+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.gold_catalog,org.apache.iceberg.spark.SparkCatalog)
+[2025-02-11T15:25:27.635+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.gold_catalog.type,hadoop)
+[2025-02-11T15:25:27.638+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.gold_catalog.warehouse,s3a://gold/)
+[2025-02-11T15:25:27.640+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.silver_catalog,org.apache.iceberg.spark.SparkCatalog)
+[2025-02-11T15:25:27.643+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.silver_catalog.type,hadoop)
+[2025-02-11T15:25:27.648+0000] {spark_submit.py:491} INFO - (spark.sql.catalog.silver_catalog.warehouse,s3a://silver/)
+[2025-02-11T15:25:27.653+0000] {spark_submit.py:491} INFO - (spark.sql.extensions,org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions)
+[2025-02-11T15:25:27.656+0000] {spark_submit.py:491} INFO - (spark.submit.deployMode,client)
+[2025-02-11T15:25:27.658+0000] {spark_submit.py:491} INFO - (spark.submit.pyFiles,)
+[2025-02-11T15:25:27.663+0000] {spark_submit.py:491} INFO - Classpath elements:
+[2025-02-11T15:25:27.671+0000] {spark_submit.py:491} INFO - file:/opt/***/jars/scala-maven-project-2.0-SNAPSHOT.jar
+[2025-02-11T15:25:27.679+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/com.typesafe_config-1.4.2.jar
+[2025-02-11T15:25:27.728+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/com.lihaoyi_requests_2.12-0.8.0.jar
+[2025-02-11T15:25:27.730+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/io.circe_circe-core_2.12-0.14.1.jar
+[2025-02-11T15:25:27.731+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/io.circe_circe-parser_2.12-0.14.1.jar
+[2025-02-11T15:25:27.732+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/io.circe_circe-generic_2.12-0.14.1.jar
+[2025-02-11T15:25:27.734+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.1.jar
+[2025-02-11T15:25:27.735+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.539.jar
+[2025-02-11T15:25:27.736+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.apache.iceberg_iceberg-spark-runtime-3.4_2.12-1.3.1.jar
+[2025-02-11T15:25:27.738+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/com.lihaoyi_geny_2.12-1.0.0.jar
+[2025-02-11T15:25:27.743+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/io.circe_circe-numbers_2.12-0.14.1.jar
+[2025-02-11T15:25:27.751+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.typelevel_cats-core_2.12-2.6.1.jar
+[2025-02-11T15:25:27.753+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.typelevel_cats-kernel_2.12-2.6.1.jar
+[2025-02-11T15:25:27.754+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.typelevel_simulacrum-scalafix-annotations_2.12-0.5.4.jar
+[2025-02-11T15:25:27.755+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/io.circe_circe-jawn_2.12-0.14.1.jar
+[2025-02-11T15:25:27.756+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.typelevel_jawn-parser_2.12-1.1.2.jar
+[2025-02-11T15:25:27.757+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/com.chuusai_shapeless_2.12-2.3.7.jar
+[2025-02-11T15:25:27.758+0000] {spark_submit.py:491} INFO - file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar
+[2025-02-11T15:25:27.762+0000] {spark_submit.py:491} INFO - 
+[2025-02-11T15:25:27.763+0000] {spark_submit.py:491} INFO - 
+[2025-02-11T15:25:28.239+0000] {spark_submit.py:491} INFO - Starting data ingestion process (Bronze)...
+[2025-02-11T15:25:28.240+0000] {spark_submit.py:491} INFO - Fetching Products Info...
+[2025-02-11T15:25:28.313+0000] {spark_submit.py:491} INFO - Fetching data from: https://fakestoreapi.com/products
+[2025-02-11T15:25:28.927+0000] {spark_submit.py:491} INFO - Fetching Users Info...
+[2025-02-11T15:25:28.928+0000] {spark_submit.py:491} INFO - Fetching data from: https://fakestoreapi.com/users
+[2025-02-11T15:25:29.223+0000] {spark_submit.py:491} INFO - Writing data to MinIO...
+[2025-02-11T15:25:29.859+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:29 INFO SparkContext: Running Spark version 3.4.0
+[2025-02-11T15:25:30.011+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO ResourceUtils: ==============================================================
+[2025-02-11T15:25:30.012+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-02-11T15:25:30.012+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO ResourceUtils: ==============================================================
+[2025-02-11T15:25:30.023+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO SparkContext: Submitted application: Write Json in Bronze
+[2025-02-11T15:25:30.169+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-02-11T15:25:30.224+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO ResourceProfile: Limiting resource is cpu
+[2025-02-11T15:25:30.225+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-02-11T15:25:30.426+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO SecurityManager: Changing view acls to: ***
+[2025-02-11T15:25:30.427+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO SecurityManager: Changing modify acls to: ***
+[2025-02-11T15:25:30.428+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO SecurityManager: Changing view acls groups to:
+[2025-02-11T15:25:30.428+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO SecurityManager: Changing modify acls groups to:
+[2025-02-11T15:25:30.429+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-02-11T15:25:32.203+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO Utils: Successfully started service 'sparkDriver' on port 32857.
+[2025-02-11T15:25:32.398+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO SparkEnv: Registering MapOutputTracker
+[2025-02-11T15:25:32.686+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO SparkEnv: Registering BlockManagerMaster
+[2025-02-11T15:25:32.761+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-02-11T15:25:32.762+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-02-11T15:25:32.772+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-02-11T15:25:32.942+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:32 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6c983ede-eece-4e04-ba0b-ad9aca1a2d52
+[2025-02-11T15:25:33.032+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:33 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-02-11T15:25:33.072+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:33 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-02-11T15:25:33.938+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:33 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-02-11T15:25:34.352+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-02-11T15:25:34.483+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.typesafe_config-1.4.2.jar at spark://1921aa867cda:32857/jars/com.typesafe_config-1.4.2.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.485+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.lihaoyi_requests_2.12-0.8.0.jar at spark://1921aa867cda:32857/jars/com.lihaoyi_requests_2.12-0.8.0.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.486+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/io.circe_circe-core_2.12-0.14.1.jar at spark://1921aa867cda:32857/jars/io.circe_circe-core_2.12-0.14.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.486+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/io.circe_circe-parser_2.12-0.14.1.jar at spark://1921aa867cda:32857/jars/io.circe_circe-parser_2.12-0.14.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.488+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/io.circe_circe-generic_2.12-0.14.1.jar at spark://1921aa867cda:32857/jars/io.circe_circe-generic_2.12-0.14.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.489+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.1.jar at spark://1921aa867cda:32857/jars/org.apache.hadoop_hadoop-aws-3.3.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.490+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.539.jar at spark://1921aa867cda:32857/jars/com.amazonaws_aws-java-sdk-bundle-1.12.539.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.491+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.apache.iceberg_iceberg-spark-runtime-3.4_2.12-1.3.1.jar at spark://1921aa867cda:32857/jars/org.apache.iceberg_iceberg-spark-runtime-3.4_2.12-1.3.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.492+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.lihaoyi_geny_2.12-1.0.0.jar at spark://1921aa867cda:32857/jars/com.lihaoyi_geny_2.12-1.0.0.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.495+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/io.circe_circe-numbers_2.12-0.14.1.jar at spark://1921aa867cda:32857/jars/io.circe_circe-numbers_2.12-0.14.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.496+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.typelevel_cats-core_2.12-2.6.1.jar at spark://1921aa867cda:32857/jars/org.typelevel_cats-core_2.12-2.6.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.497+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.typelevel_cats-kernel_2.12-2.6.1.jar at spark://1921aa867cda:32857/jars/org.typelevel_cats-kernel_2.12-2.6.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.498+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.typelevel_simulacrum-scalafix-annotations_2.12-0.5.4.jar at spark://1921aa867cda:32857/jars/org.typelevel_simulacrum-scalafix-annotations_2.12-0.5.4.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.499+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/io.circe_circe-jawn_2.12-0.14.1.jar at spark://1921aa867cda:32857/jars/io.circe_circe-jawn_2.12-0.14.1.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.500+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.typelevel_jawn-parser_2.12-1.1.2.jar at spark://1921aa867cda:32857/jars/org.typelevel_jawn-parser_2.12-1.1.2.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.501+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.chuusai_shapeless_2.12-2.3.7.jar at spark://1921aa867cda:32857/jars/com.chuusai_shapeless_2.12-2.3.7.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.505+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar at spark://1921aa867cda:32857/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.507+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO SparkContext: Added JAR file:/opt/***/jars/scala-maven-project-2.0-SNAPSHOT.jar at spark://1921aa867cda:32857/jars/scala-maven-project-2.0-SNAPSHOT.jar with timestamp 1739287529750
+[2025-02-11T15:25:34.863+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark:7077...
+[2025-02-11T15:25:34.982+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:34 INFO TransportClientFactory: Successfully created connection to spark/172.19.0.4:7077 after 64 ms (0 ms spent in bootstraps)
+[2025-02-11T15:25:37.075+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250211152536-0000
+[2025-02-11T15:25:37.128+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34863.
+[2025-02-11T15:25:37.130+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO NettyBlockTransferService: Server created on 1921aa867cda:34863
+[2025-02-11T15:25:37.137+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-02-11T15:25:37.189+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 1921aa867cda, 34863, None)
+[2025-02-11T15:25:37.200+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO BlockManagerMasterEndpoint: Registering block manager 1921aa867cda:34863 with 434.4 MiB RAM, BlockManagerId(driver, 1921aa867cda, 34863, None)
+[2025-02-11T15:25:37.211+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 1921aa867cda, 34863, None)
+[2025-02-11T15:25:37.215+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 1921aa867cda, 34863, None)
+[2025-02-11T15:25:37.357+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250211152536-0000/0 on worker-20250211151700-172.19.0.5-35911 (172.19.0.5:35911) with 2 core(s)
+[2025-02-11T15:25:37.365+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:37 INFO StandaloneSchedulerBackend: Granted executor ID app-20250211152536-0000/0 on hostPort 172.19.0.5:35911 with 2 core(s), 1024.0 MiB RAM
+[2025-02-11T15:25:39.684+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:39 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-02-11T15:25:41.065+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:41 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250211152536-0000/0 is now RUNNING
+[2025-02-11T15:25:41.686+0000] {spark_submit.py:491} INFO - new method:
+[2025-02-11T15:25:41.707+0000] {spark_submit.py:491} INFO - Starting writeToMinIO for path: Products/Products_20250211
+[2025-02-11T15:25:41.708+0000] {spark_submit.py:491} INFO - Using bucket: bronze
+[2025-02-11T15:25:41.853+0000] {spark_submit.py:491} INFO - JSON string length: 10614
+[2025-02-11T15:25:41.860+0000] {spark_submit.py:491} INFO - Converting to Dataset...
+[2025-02-11T15:25:49.924+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:49 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-02-11T15:25:49.937+0000] {spark_submit.py:491} INFO - 25/02/11 15:25:49 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-02-11T15:26:01.737+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:01 INFO CodeGenerator: Code generated in 3269.103399 ms
+[2025-02-11T15:26:04.689+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:04 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.19.0.5:57190) with ID 0,  ResourceProfileId 0
+[2025-02-11T15:26:05.310+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:05 INFO BlockManagerMasterEndpoint: Registering block manager 172.19.0.5:38243 with 434.4 MiB RAM, BlockManagerId(0, 172.19.0.5, 38243, None)
+[2025-02-11T15:26:08.205+0000] {spark_submit.py:491} INFO - Reading as DataFrame...
+[2025-02-11T15:26:19.278+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:19 INFO CodeGenerator: Code generated in 202.985103 ms
+[2025-02-11T15:26:25.866+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:25 INFO SparkContext: Starting job: json at WriterJsonBase.scala:33
+[2025-02-11T15:26:26.718+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:26 INFO DAGScheduler: Got job 0 (json at WriterJsonBase.scala:33) with 1 output partitions
+[2025-02-11T15:26:26.721+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:26 INFO DAGScheduler: Final stage: ResultStage 0 (json at WriterJsonBase.scala:33)
+[2025-02-11T15:26:26.722+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:26 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:26:26.727+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:26 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:26:26.747+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:26 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at json at WriterJsonBase.scala:33), which has no missing parents
+[2025-02-11T15:26:30.439+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:30 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 16.9 KiB, free 434.4 MiB)
+[2025-02-11T15:26:31.627+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:31 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 434.4 MiB)
+[2025-02-11T15:26:31.672+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:31 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 1921aa867cda:34863 (size: 7.2 KiB, free: 434.4 MiB)
+[2025-02-11T15:26:31.725+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:31 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:26:32.018+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:32 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at WriterJsonBase.scala:33) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:26:32.100+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:32 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-02-11T15:26:59.664+0000] {spark_submit.py:491} INFO - 25/02/11 15:26:59 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 18216 bytes)
+[2025-02-11T15:27:03.831+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:03 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.19.0.5:38243 (size: 7.2 KiB, free: 434.4 MiB)
+[2025-02-11T15:27:09.377+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:09 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 9915 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:27:09.445+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:09 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2025-02-11T15:27:09.588+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:09 INFO DAGScheduler: ResultStage 0 (json at WriterJsonBase.scala:33) finished in 42.081 s
+[2025-02-11T15:27:10.563+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:10 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:27:10.580+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:10 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-02-11T15:27:10.641+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:10 INFO DAGScheduler: Job 0 finished: json at WriterJsonBase.scala:33, took 44.761246 s
+[2025-02-11T15:27:10.717+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:10 INFO AsyncEventQueue: Process of event SparkListenerTaskEnd(0,0,ResultTask,Success,org.apache.spark.scheduler.TaskInfo@5eafeed6,org.apache.spark.executor.ExecutorMetrics@5dc2f9e5,org.apache.spark.executor.TaskMetrics@1b9ab5ff) by listener AppStatusListener took 1.198551409s.
+[2025-02-11T15:27:13.463+0000] {spark_submit.py:491} INFO - Writing to full path: s3a://bronze/Products/Products_20250211
+[2025-02-11T15:27:16.879+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:16 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2025-02-11T15:27:17.084+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:17 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+[2025-02-11T15:27:17.085+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:17 INFO MetricsSystemImpl: s3a-file-system metrics system started
+[2025-02-11T15:27:28.199+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:28 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-02-11T15:27:28.222+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:28 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-02-11T15:27:28.227+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:28 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2025-02-11T15:27:30.438+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO CodeGenerator: Code generated in 777.311556 ms
+[2025-02-11T15:27:30.509+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO SparkContext: Starting job: save at WriterJsonBase.scala:43
+[2025-02-11T15:27:30.531+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO DAGScheduler: Got job 1 (save at WriterJsonBase.scala:43) with 1 output partitions
+[2025-02-11T15:27:30.533+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO DAGScheduler: Final stage: ResultStage 1 (save at WriterJsonBase.scala:43)
+[2025-02-11T15:27:30.537+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:27:30.548+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:27:30.559+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[11] at save at WriterJsonBase.scala:43), which has no missing parents
+[2025-02-11T15:27:30.887+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 244.3 KiB, free 434.1 MiB)
+[2025-02-11T15:27:30.986+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 88.5 KiB, free 434.1 MiB)
+[2025-02-11T15:27:30.996+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 1921aa867cda:34863 (size: 88.5 KiB, free: 434.3 MiB)
+[2025-02-11T15:27:30.997+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:30 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:27:31.003+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:31 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[11] at save at WriterJsonBase.scala:43) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:27:31.008+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:31 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2025-02-11T15:27:31.023+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:31 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 18216 bytes)
+[2025-02-11T15:27:31.196+0000] {spark_submit.py:491} INFO - 25/02/11 15:27:31 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.19.0.5:38243 (size: 88.5 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:16.354+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 45313 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:28:16.372+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2025-02-11T15:28:16.373+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO DAGScheduler: ResultStage 1 (save at WriterJsonBase.scala:43) finished in 45.790 s
+[2025-02-11T15:28:16.374+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:28:16.375+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2025-02-11T15:28:16.384+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO DAGScheduler: Job 1 finished: save at WriterJsonBase.scala:43, took 45.876746 s
+[2025-02-11T15:28:16.411+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:16 INFO FileFormatWriter: Start to commit write Job 59fac053-e0ec-4484-9d52-af1dca233f03.
+[2025-02-11T15:28:17.732+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:17 INFO FileFormatWriter: Write Job 59fac053-e0ec-4484-9d52-af1dca233f03 committed. Elapsed time: 1316 ms.
+[2025-02-11T15:28:17.754+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:17 INFO FileFormatWriter: Finished processing stats for write job 59fac053-e0ec-4484-9d52-af1dca233f03.
+[2025-02-11T15:28:17.773+0000] {spark_submit.py:491} INFO - Data written successfully to MinIO: s3a://bronze/Products/Products_20250211
+[2025-02-11T15:28:17.818+0000] {spark_submit.py:491} INFO - new method:
+[2025-02-11T15:28:17.820+0000] {spark_submit.py:491} INFO - Starting writeToMinIO for path: Users/Users_20250211
+[2025-02-11T15:28:17.821+0000] {spark_submit.py:491} INFO - Using bucket: bronze
+[2025-02-11T15:28:17.837+0000] {spark_submit.py:491} INFO - JSON string length: 2990
+[2025-02-11T15:28:17.838+0000] {spark_submit.py:491} INFO - Converting to Dataset...
+[2025-02-11T15:28:18.624+0000] {spark_submit.py:491} INFO - Reading as DataFrame...
+[2025-02-11T15:28:18.757+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO SparkContext: Starting job: json at WriterJsonBase.scala:33
+[2025-02-11T15:28:18.792+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO DAGScheduler: Got job 2 (json at WriterJsonBase.scala:33) with 1 output partitions
+[2025-02-11T15:28:18.794+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO DAGScheduler: Final stage: ResultStage 2 (json at WriterJsonBase.scala:33)
+[2025-02-11T15:28:18.795+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:28:18.795+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:28:18.796+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[15] at json at WriterJsonBase.scala:33), which has no missing parents
+[2025-02-11T15:28:18.796+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 16.9 KiB, free 434.0 MiB)
+[2025-02-11T15:28:18.831+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 434.0 MiB)
+[2025-02-11T15:28:18.835+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 1921aa867cda:34863 (size: 7.2 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:18.837+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:28:18.839+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[15] at json at WriterJsonBase.scala:33) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:28:18.840+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2025-02-11T15:28:18.848+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 10544 bytes)
+[2025-02-11T15:28:18.953+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:18 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.19.0.5:38243 (size: 7.2 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:19.212+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 341 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:28:19.217+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2025-02-11T15:28:19.223+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO DAGScheduler: ResultStage 2 (json at WriterJsonBase.scala:33) finished in 0.420 s
+[2025-02-11T15:28:19.223+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:28:19.224+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2025-02-11T15:28:19.225+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO DAGScheduler: Job 2 finished: json at WriterJsonBase.scala:33, took 0.432267 s
+[2025-02-11T15:28:19.521+0000] {spark_submit.py:491} INFO - Writing to full path: s3a://bronze/Users/Users_20250211
+[2025-02-11T15:28:19.809+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-02-11T15:28:19.810+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-02-11T15:28:19.810+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:19 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2025-02-11T15:28:20.128+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO CodeGenerator: Code generated in 144.658799 ms
+[2025-02-11T15:28:20.155+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO SparkContext: Starting job: save at WriterJsonBase.scala:43
+[2025-02-11T15:28:20.162+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO DAGScheduler: Got job 3 (save at WriterJsonBase.scala:43) with 1 output partitions
+[2025-02-11T15:28:20.163+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO DAGScheduler: Final stage: ResultStage 3 (save at WriterJsonBase.scala:43)
+[2025-02-11T15:28:20.165+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO DAGScheduler: Parents of final stage: List()
+[2025-02-11T15:28:20.167+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO DAGScheduler: Missing parents: List()
+[2025-02-11T15:28:20.169+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[23] at save at WriterJsonBase.scala:43), which has no missing parents
+[2025-02-11T15:28:20.497+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 247.2 KiB, free 433.8 MiB)
+[2025-02-11T15:28:20.522+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 89.7 KiB, free 433.7 MiB)
+[2025-02-11T15:28:20.637+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 1921aa867cda:34863 (size: 89.7 KiB, free: 434.2 MiB)
+[2025-02-11T15:28:20.639+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1535
+[2025-02-11T15:28:20.645+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[23] at save at WriterJsonBase.scala:43) (first 15 tasks are for partitions Vector(0))
+[2025-02-11T15:28:20.646+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+[2025-02-11T15:28:20.652+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (172.19.0.5, executor 0, partition 0, PROCESS_LOCAL, 10544 bytes)
+[2025-02-11T15:28:20.689+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 1921aa867cda:34863 in memory (size: 88.5 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:20.743+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.19.0.5:38243 (size: 89.7 KiB, free: 434.2 MiB)
+[2025-02-11T15:28:20.751+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.19.0.5:38243 in memory (size: 88.5 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:20.814+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 1921aa867cda:34863 in memory (size: 7.2 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:20.821+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:20 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.19.0.5:38243 in memory (size: 7.2 KiB, free: 434.3 MiB)
+[2025-02-11T15:28:21.735+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 1082 ms on 172.19.0.5 (executor 0) (1/1)
+[2025-02-11T15:28:21.766+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2025-02-11T15:28:21.773+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO DAGScheduler: ResultStage 3 (save at WriterJsonBase.scala:43) finished in 1.596 s
+[2025-02-11T15:28:21.777+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-02-11T15:28:21.778+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2025-02-11T15:28:21.783+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO DAGScheduler: Job 3 finished: save at WriterJsonBase.scala:43, took 1.613232 s
+[2025-02-11T15:28:21.787+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:21 INFO FileFormatWriter: Start to commit write Job 86b68dc6-c917-4716-94c0-96e1ee29517d.
+[2025-02-11T15:28:22.222+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO FileFormatWriter: Write Job 86b68dc6-c917-4716-94c0-96e1ee29517d committed. Elapsed time: 446 ms.
+[2025-02-11T15:28:22.226+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO FileFormatWriter: Finished processing stats for write job 86b68dc6-c917-4716-94c0-96e1ee29517d.
+[2025-02-11T15:28:22.228+0000] {spark_submit.py:491} INFO - Data written successfully to MinIO: s3a://bronze/Users/Users_20250211
+[2025-02-11T15:28:22.228+0000] {spark_submit.py:491} INFO - Data ingestion completed successfully in Bronze.
+[2025-02-11T15:28:22.279+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-02-11T15:28:22.282+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-02-11T15:28:22.377+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO SparkUI: Stopped Spark web UI at http://1921aa867cda:4040
+[2025-02-11T15:28:22.400+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-02-11T15:28:22.405+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-02-11T15:28:22.664+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:22 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-02-11T15:28:23.081+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO MemoryStore: MemoryStore cleared
+[2025-02-11T15:28:23.089+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO BlockManager: BlockManager stopped
+[2025-02-11T15:28:23.090+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-02-11T15:28:23.113+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-02-11T15:28:23.248+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO SparkContext: Successfully stopped SparkContext
+[2025-02-11T15:28:23.252+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO ShutdownHookManager: Shutdown hook called
+[2025-02-11T15:28:23.259+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-0235dc83-f2d9-4233-aab1-9a88664805e4
+[2025-02-11T15:28:23.317+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-7d136163-7884-4a60-a1e3-f8313195c6be
+[2025-02-11T15:28:23.514+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+[2025-02-11T15:28:23.536+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+[2025-02-11T15:28:23.562+0000] {spark_submit.py:491} INFO - 25/02/11 15:28:23 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
+[2025-02-11T15:28:26.104+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=DAG_ETL_daily_jobs, task_id=bronze_job, execution_date=20250210T090000, start_date=20250211T152403, end_date=20250211T152826
+[2025-02-11T15:28:27.058+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-02-11T15:28:27.722+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -3,7 +3,7 @@ from airflow import DAG
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 
 default_args = {
-    'owner': 'airflow',
+    'owner': 'saadelbekkali',
     'start_date': datetime(2025, 1, 1),
     'retries': 1
 }
@@ -11,8 +11,10 @@ default_args = {
 dag = DAG(
     'sparkSQL',
     default_args=default_args,
+    description = "Dag to show SQL queries to the iceberg catalog",
     schedule_interval=None,
-    catchup=False
+    catchup=False,
+    tags = ["SQL"]
 )
 
 # Define the Spark submit operator with correct configurations for Bitnami setup
