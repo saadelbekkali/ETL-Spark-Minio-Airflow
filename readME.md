@@ -12,8 +12,8 @@ A modular data pipeline that ingests data daily from the [Fake Store API](https:
 - [Architecture & Workflow](#architecture--workflow)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [VS Code Configuration](#vs-code-configuration)
   - [Installation & Setup](#installation--setup)
-  - [VS Code Configutation](#vs-code-configuration)
 - [Accessing the Services](#accessing-the-services)
 - [Troubleshooting](#troubleshooting)
 - [Improvements & Future Work](#improvements--future-work)
@@ -133,7 +133,7 @@ If you haven't already, download and install Azul Zulu 11 from a trusted source 
         "default": true
     }
 ]
-
+```
  3. **Configure JAVA_HOME Environment Variable (Optional but recommended):**
 
 While configuring `settings.json` is usually sufficient, you can also set up the `JAVA_HOME` environment variable to ensure VS Code and other tools use the correct SDK.
@@ -156,7 +156,7 @@ You should see information about Azul Zulu 11, confirming that VS Code is using 
 openjdk version "11.0.25" 2021-04-20
 OpenJDK Runtime Environment (Zulu 11.48+21-CA) (build 11.0.25+10-LTS)
 OpenJDK 64-Bit Server VM (Zulu 11.48+21-CA) (build 11.0.25+10-LTS, mixed mode)
-
+```
 ### Installation & Setup
 
 1. **Clone the Repository:**
