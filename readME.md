@@ -151,9 +151,8 @@ While configuring `settings.json` is usually sufficient, you can also set up the
 
   5. Verify Configuration:
 
-    * Open an integrated terminal in VS Code (`View -> Terminal`).
-
-    * Run the command: `java -version`
+  Open an integrated terminal in VS Code (`View -> Terminal`).
+  Run the command: `java -version`
 
   You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
 
