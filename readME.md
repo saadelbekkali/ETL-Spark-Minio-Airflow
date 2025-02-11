@@ -142,7 +142,7 @@ While configuring `settings.json` is usually sufficient, you can also set up the
   2. Create or edit the `JAVA_HOME` variable:
      - Set `JAVA_HOME` to your Azul Zulu 11 installation directory (same path used in `settings.json`).
   3. Add `$JAVA_HOME/bin` to the `PATH` variable:
-     - This ensures `java` and `javac` commands use the correct version.
+     - This ensures `java` and `javac` commands use the correct version. Please make sure where it is your Zulu Path!
 
        ```text
         export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/azul-11/Contents/Home
