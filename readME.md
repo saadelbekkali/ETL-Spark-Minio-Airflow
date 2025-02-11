@@ -156,13 +156,13 @@ While configuring `settings.json` is usually sufficient, you can also set up the
 
     - Run the command: `java -version`
 
-    You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
+  You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
 
-    ```text
-      openjdk version "11.0.25" 2021-04-20
-      OpenJDK Runtime Environment (Zulu 11.48+21-CA) (build 11.0.25+10-LTS)
-      OpenJDK 64-Bit Server VM (Zulu 11.48+21-CA) (build 11.0.25+10-LTS, mixed mode)
-    ```
+      ```text
+        openjdk version "11.0.25" 2021-04-20
+        OpenJDK Runtime Environment (Zulu 11.48+21-CA) (build 11.0.25+10-LTS)
+        OpenJDK 64-Bit Server VM (Zulu 11.48+21-CA) (build 11.0.25+10-LTS, mixed mode)
+      ```
 ### Installation & Setup
 
 1. **Clone the Repository:**
