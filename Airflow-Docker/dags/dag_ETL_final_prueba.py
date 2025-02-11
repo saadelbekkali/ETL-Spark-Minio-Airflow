@@ -13,7 +13,7 @@ default_args = {
 }
 
 dag = DAG(
-    'DAG_ETL_daily_jobs_v2',
+    'DAG_ETL_daily_jobs',
     default_args=default_args,
     schedule_interval="0 9 * * *",  # Ejecuta diariamente a las 9:00 AM
     catchup=False
