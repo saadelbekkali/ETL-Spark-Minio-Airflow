@@ -188,14 +188,14 @@ This command will build the Docker images (for Airflow, Spark, and MinIO) and st
 - Navigate to the ETL-Store-Scala folder:
 
   ```bash
-cd /ETL-Store-Scala
+  cd /ETL-Store-Scala
   ```
 
 - Build the project and generate the JAR file using Maven:
 
   ```bash
   mvn clean package
-```
+  ```
 Once the JAR file is generated (typically under the target folder), copy it to the appropriate folder inside the Docker environment (usually a jar directory within Airflow-Docker). Adjust the path as needed.
 
 3. **Triggering the Pipeline:**
