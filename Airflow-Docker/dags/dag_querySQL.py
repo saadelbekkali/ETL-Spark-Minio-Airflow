@@ -9,7 +9,7 @@ default_args = {
 }
 
 dag = DAG(
-    'spark_minio_job_read',
+    'sparkSQL',
     default_args=default_args,
     schedule_interval=None,
     catchup=False
