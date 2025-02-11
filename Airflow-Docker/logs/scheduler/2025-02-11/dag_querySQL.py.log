@@ -941,3 +941,24 @@ On instance['dag']['tags']:
 [2025-02-11T16:22:00.802+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:22:00.801+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-02-11T16:22:00.886+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:22:00.885+0000] {dag.py:3504} INFO - Setting next_dagrun for sparkSQL to None, run_after=None
 [2025-02-11T16:22:00.946+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_querySQL.py took 0.282 seconds
+[2025-02-11T16:22:31.031+0000] {processor.py:157} INFO - Started process (PID=2892) to work on /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:22:31.033+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/dag_querySQL.py for tasks to queue
+[2025-02-11T16:22:31.034+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:22:31.034+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:22:31.051+0000] {processor.py:836} INFO - DAG(s) dict_keys(['sparkSQL']) retrieved from /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:22:31.092+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:22:31.091+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:22:31.118+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:22:31.118+0000] {dag.py:3504} INFO - Setting next_dagrun for sparkSQL to None, run_after=None
+[2025-02-11T16:22:31.142+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_querySQL.py took 0.116 seconds
+[2025-02-11T16:23:01.609+0000] {processor.py:157} INFO - Started process (PID=2894) to work on /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:23:01.636+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/dag_querySQL.py for tasks to queue
+[2025-02-11T16:23:01.638+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:23:01.637+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:23:01.657+0000] {processor.py:836} INFO - DAG(s) dict_keys(['sparkSQL']) retrieved from /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:23:01.727+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:23:01.727+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:23:01.755+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:23:01.755+0000] {dag.py:3504} INFO - Setting next_dagrun for sparkSQL to None, run_after=None
+[2025-02-11T16:23:01.775+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_querySQL.py took 0.364 seconds
+[2025-02-11T16:23:31.864+0000] {processor.py:157} INFO - Started process (PID=2896) to work on /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:23:31.865+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/dag_querySQL.py for tasks to queue
+[2025-02-11T16:23:31.866+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:23:31.866+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:23:31.884+0000] {processor.py:836} INFO - DAG(s) dict_keys(['sparkSQL']) retrieved from /opt/airflow/dags/dag_querySQL.py
+[2025-02-11T16:23:31.919+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:23:31.919+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:23:31.950+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:23:31.950+0000] {dag.py:3504} INFO - Setting next_dagrun for sparkSQL to None, run_after=None
+[2025-02-11T16:23:31.974+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_querySQL.py took 0.114 seconds

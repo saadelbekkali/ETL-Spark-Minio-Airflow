@@ -148,13 +148,12 @@ While configuring `settings.json` is usually sufficient, you can also set up the
           export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/azul-11/Contents/Home
           export PATH=$JAVA_HOME/bin:$PATH
         ```  
-  4. Restart VS Code and your terminal.
 
   5. Verify Configuration:
 
-    - Open an integrated terminal in VS Code (`View -> Terminal`).
+    * Open an integrated terminal in VS Code (`View -> Terminal`).
 
-    - Run the command: `java -version`
+    * Run the command: `java -version`
 
   You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
 
