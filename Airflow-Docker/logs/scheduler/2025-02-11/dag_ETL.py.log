@@ -870,3 +870,17 @@ TypeError: __init__() got an unexpected keyword argument 'tag'
 [2025-02-11T16:17:17.809+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:17:17.809+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-02-11T16:17:17.850+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:17:17.850+0000] {dag.py:3504} INFO - Setting next_dagrun for DAG_ETL_daily_jobs to 2025-02-11T09:00:00+00:00, run_after=2025-02-12T09:00:00+00:00
 [2025-02-11T16:17:17.880+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_ETL.py took 0.157 seconds
+[2025-02-11T16:17:48.016+0000] {processor.py:157} INFO - Started process (PID=2873) to work on /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:17:48.018+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/dag_ETL.py for tasks to queue
+[2025-02-11T16:17:48.019+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:17:48.019+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:17:48.044+0000] {processor.py:836} INFO - DAG(s) dict_keys(['DAG_ETL_daily_jobs']) retrieved from /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:17:48.116+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:17:48.116+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:17:48.154+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:17:48.153+0000] {dag.py:3504} INFO - Setting next_dagrun for DAG_ETL_daily_jobs to 2025-02-11T09:00:00+00:00, run_after=2025-02-12T09:00:00+00:00
+[2025-02-11T16:17:48.195+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_ETL.py took 0.184 seconds
+[2025-02-11T16:18:18.290+0000] {processor.py:157} INFO - Started process (PID=2875) to work on /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:18:18.294+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/dag_ETL.py for tasks to queue
+[2025-02-11T16:18:18.296+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:18:18.296+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:18:18.318+0000] {processor.py:836} INFO - DAG(s) dict_keys(['DAG_ETL_daily_jobs']) retrieved from /opt/airflow/dags/dag_ETL.py
+[2025-02-11T16:18:18.356+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:18:18.356+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-02-11T16:18:18.388+0000] {logging_mixin.py:150} INFO - [2025-02-11T16:18:18.388+0000] {dag.py:3504} INFO - Setting next_dagrun for DAG_ETL_daily_jobs to 2025-02-11T09:00:00+00:00, run_after=2025-02-12T09:00:00+00:00
+[2025-02-11T16:18:18.411+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_ETL.py took 0.127 seconds
