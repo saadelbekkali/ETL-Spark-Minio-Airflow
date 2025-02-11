@@ -149,14 +149,15 @@ While configuring `settings.json` is usually sufficient, you can also set up the
           export PATH=$JAVA_HOME/bin:$PATH
 
     4. Restart VS Code and your terminal.
-    
+
 
 4. **Verify Configuration:**
 
-  1. Open an integrated terminal in VS Code (`View -> Terminal`).
-  2. Run the command: `java -version`
+    1.  Open an integrated terminal in VS Code (`View -> Terminal`).
 
-  You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
+    2. Run the command: `java -version`
+
+    You should see information about Azul Zulu 11, confirming that VS Code is using the correct SDK. Example output:
 
   ```text
   openjdk version "11.0.25" 2021-04-20
