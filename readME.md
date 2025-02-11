@@ -98,7 +98,7 @@ The project was developed with the following goals in mind:
 - **Git:** To clone the repository.
 - **Maven:** To build the Scala project.
 
-### Vs Code Configuration
+### VS Code Configuration
 
 To work optimally with this Java project (originally created in IntelliJ) in Visual Studio Code (VS Code), you'll need to install certain extensions and configure the Java SDK.
 
