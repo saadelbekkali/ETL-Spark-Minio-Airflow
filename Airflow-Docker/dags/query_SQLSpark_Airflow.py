@@ -7,6 +7,18 @@ def main():
         .getOrCreate()
 
 
+    """
+    All the tables that we have:
+
+    silver_catalog.products
+    silver_catalog.users
+
+    gold_catalog.aggUsers
+    gold_catalog.infoUsers
+    gold_catalog.aggProducts
+    gold_catalog.infoProducts
+    
+    """
 
 
     print("Reading ICEBERG from MinIO...")
@@ -14,11 +26,12 @@ def main():
     # Read JSON file as DataFrame
     df = spark.read \
         .format("iceberg") \
-        .load("silver_catalog.products")
+        .load("gold_catalog.aggUsers")
 
     print("DataFrame loaded successfully:")
-    df.show(truncate=False)
+   ## df.show(truncate=False)
 
+    df.select("DateIngestion").distinct().show()
 
     # Print the schema of the DataFrame
     print("Schema of the DataFrame:")

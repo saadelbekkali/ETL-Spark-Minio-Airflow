@@ -43,7 +43,10 @@ The repository is organized into two primary folders:
 
 - **`Airflow-Docker`**  
   Contains all Docker-related files needed to run the integrated environment:
-  - **DAGs:** Airflow DAGs that schedule and manage the ETL pipeline.
+  - **DAGs:** Airflow DAGs that schedule and manage the ETL pipeline. We have two DAGs:  
+    - **ETL DAG**: Responsible for extracting, transforming, and loading data across different pipeline layers.  
+    - **SparkSQL DAG**: Executes and visualizes queries in SparkSQL on the processed data. Or you can create a new 
+      .py with pyspark to do queries.
   - **Dockerfiles:** For building container images.
   - **docker-compose.yml:** Defines and runs the following services:
     - **Apache Airflow:** The orchestration engine.
@@ -204,7 +207,7 @@ Once the JAR file is generated (typically under the target folder), copy it to t
 
 3. **Triggering the Pipeline:**
 
-* With all services running, access the Airflow UI at http://localhost:8080.
+* With all services running, access the Airflow UI at http://localhost:8081.
 * Monitor and manage the DAGs. You can either trigger them manually or let the scheduled daily run execute automatically.
 * Logs and progress can be reviewed directly from the Airflow web interface.
 

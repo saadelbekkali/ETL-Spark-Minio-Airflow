@@ -22,8 +22,13 @@ spark_job = SparkSubmitOperator(
     task_id='spark_minio_task',
     application='/opt/airflow/dags/query_SQLSpark_Airflow.py',
     conn_id='spark_default',
-    packages='org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.11.1026',
+    packages= "org.apache.hadoop:hadoop-aws:3.3.1,"
+                                  "com.amazonaws:aws-java-sdk-bundle:1.12.539,"
+                                  "org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1",
     conf={
+        'spark.jars.packages':    "org.apache.hadoop:hadoop-aws:3.3.1,"
+                                  "com.amazonaws:aws-java-sdk-bundle:1.12.539,"
+                                  "org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.3.1",
         'spark.driver.extraClassPath': '/opt/airflow/jars/*',
         'spark.executor.extraClassPath': '/opt/airflow/jars/*',
         'spark.hadoop.fs.s3a.endpoint': 'http://minio:9000',
@@ -38,9 +43,9 @@ spark_job = SparkSubmitOperator(
         'spark.sql.catalog.silver_catalog': 'org.apache.iceberg.spark.SparkCatalog',
         'spark.sql.catalog.silver_catalog.type': 'hadoop',
         'spark.sql.catalog.silver_catalog.warehouse': 's3a://silver/',
-        'spark.sql.catalog.gold_catalog': 'org.apache.iceberg.spark.SparkCatalog',
-        'spark.sql.catalog.gold_catalog.type': 'hadoop',
-        'spark.sql.catalog.gold_catalog.warehouse': 's3a://gold/'
+        'spark.sql.catalog.gold_catalog': 'org.apache.iceberg.spark.SparkCatalog',  # Define Iceberg catalog for Gold data
+        'spark.sql.catalog.gold_catalog.type': 'hadoop',  # Specify catalog type
+        'spark.sql.catalog.gold_catalog.warehouse': 's3a://gold/'  # Path for Gold data in S3
     },
     verbose=True,
     dag=dag
