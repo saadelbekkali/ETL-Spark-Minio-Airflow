@@ -2,6 +2,8 @@
 
 A modular data pipeline that ingests data daily from the [Fake Store API](https://fakestoreapi.com/), processes it through multiple transformation layers (bronze, silver, and gold), and stores the results as Apache Iceberg tables. This project leverages Docker Compose to seamlessly integrate Airflow for orchestration, Spark for data processing, and MinIO for object storage. The ETL logic is implemented in Scala using Spark and follows a Maven-based project structure, providing an excellent playground for both Scala/Spark enthusiasts and those looking to learn Airflow.
 
+![Arquitectura de Datos](Spark-Airflow-Minio-Architecture v2.png)
+
 ---
 
 ## Table of Contents
