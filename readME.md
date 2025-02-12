@@ -255,7 +255,7 @@ UI is accessible at http://localhost:8080.Monitor Spark logs and job status via 
 ## Improvements & Future Work
 
 - **Enhanced Catalog Access:**  
-  Improve the data catalog so that it is accessible via standard SQL interfaces instead of relying solely on Spark SQL. This change will offer a more familiar querying experience and simplify integration with various BI tools.
+  Improve the data catalog so that it is accessible via standard SQL interfaces instead of relying solely on Spark SQL, I will implement DuckDb or Trino as SQL engine. This change will offer a more familiar querying experience and simplify integration with various BI tools.
 
 - **Cloud Deployment:**  
   Explore deploying the entire pipeline in the cloud to take advantage of scalable resources, managed services, and global accessibility. This includes setting up cloud-native services for Airflow, Spark, and MinIO (or their alternatives).
